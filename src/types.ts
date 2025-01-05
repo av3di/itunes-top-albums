@@ -25,3 +25,11 @@ export interface AlbumType {
   'im:image': ImageAttributes[];
   'im:name': NameAttributes;
 }
+
+export interface AlbumsListProps {
+  albums: AlbumType[];
+}
+
+export interface AlbumImagesProps {
+  images: ImageAttributes[];
+}
