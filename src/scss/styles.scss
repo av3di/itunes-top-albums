@@ -17,6 +17,20 @@ h1 {
   font-weight: bold;
 }
 
+#loadingScreen {
+  height: 100vh;
+  width: 100vw;
+  background-color: $dark-gray;
+  color: $almost-white;
+  img {
+    max-width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    animation: 2s linear infinite reverse rock;
+  }
+}
+
 header .logo {
   max-width: 90px;
   img {
@@ -80,5 +94,43 @@ header .logo {
     &.album-artist {
       color: $almost-white;
     }
+  }
+}
+
+@keyframes rock {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }

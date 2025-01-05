@@ -5,10 +5,12 @@ import { AlbumType } from './types';
 function App() {
   const [error, setError] = useState<string | undefined>();
   const [albums, setAlbums] = useState<AlbumType[] | undefined>();
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const getAlbums = async () => {
       setError(undefined);
+      setLoading(true);
 
       try {
         const response = await fetch('https://itunes.apple.com/us/rss/topalbums/limit=100/json');
@@ -21,6 +23,8 @@ function App() {
       } catch(e) {
         setError('Sorry, there was an error getting the albums. Please try again later.');
         console.error(`Error with fetching data: ${e}`);
+      } finally {
+        setLoading(false);
       }
     }
     getAlbums();
@@ -37,9 +41,13 @@ function App() {
         </div>
       </header>
       { error && <p>{error}</p> }
-
+      { loading && (<div id="loadingScreen">
+          <img src={headphones} />
+          <p className="fs-5 text-center mt-4">Loading...</p>
+        </div>
+      )}
       <div className="row">
-       { !error && albums && albums.map((album, index) => (
+       { !error && !loading && albums && albums.map((album, index) => (
        <div className="album col-6 col-sm-4 col-lg-3 text-left" key={album.id.attributes['im:id']}>
        <h2 className="rubik-vinyl-regular">{index + 1}</h2>
         <div className="frame my-3">
