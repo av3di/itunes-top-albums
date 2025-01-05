@@ -25,10 +25,10 @@ function App() {
   }, []);
 
   return (
-    <>
-      <h1>iTunes Top 100 Albums</h1>
+    <div className="container">
+      <h1 className="col-auto text-left my-5">iTunes Top 100 Albums</h1>
       { error && <p>{error}</p> }
-    </>
+    </div>
   )
 }
 
