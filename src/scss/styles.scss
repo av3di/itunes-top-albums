@@ -1,1 +1,84 @@
 @import "bootstrap/scss/bootstrap";
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+$dark-gray: #454953;
+$salmon: #E7989A;
+$pale-orange: #FFCEB0;
+$almost-white: #FFF8F4;
+
+html, body {
+  background-color: $dark-gray;
+}
+
+h1 {
+  color: $salmon;
+  font-weight: bold;
+}
+
+header .logo {
+  max-width: 90px;
+  img {
+    padding: 0;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+}
+.rubik-vinyl-regular {
+  font-family: "Rubik Vinyl", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.archivo-black-regular {
+  font-family: "Archivo Black", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.album {
+  h2 {
+    color: $almost-white;
+  }
+
+  .frame {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $pale-orange;
+      height: 170px;
+      width: 170px;
+
+      -webkit-transform: rotate(5deg);
+      -moz-transform: rotate(5deg);
+      -o-transform: rotate(5deg);
+      -ms-transform: rotate(5deg);
+      transform: rotate(5deg);
+    }
+    img {
+      position: relative;
+      z-index: 1;
+      border: solid 2px $almost-white
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+    &.album-name {
+      color: $pale-orange;
+    }
+    &.album-artist {
+      color: $almost-white;
+    }
+  }
+}
