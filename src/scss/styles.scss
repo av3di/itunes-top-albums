@@ -79,6 +79,12 @@ header .logo {
       -ms-transform: rotate(5deg);
       transform: rotate(5deg);
     }
+    &:hover {
+      cursor: pointer;
+      &:before {
+        animation: 0.5s linear straightenFrame forwards;
+      }
+    }
     img {
       position: relative;
       z-index: 1;
@@ -132,5 +138,29 @@ header .logo {
     -o-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
+  }
+}
+
+@keyframes straightenFrame {
+  0% {
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+  50% {
+    -webkit-transform: rotate(2.5deg) scale(1.1);
+    -moz-transform: rotate(2.5deg) scale(1.1);
+    -o-transform: rotate(2.5deg) scale(1.1);
+    -ms-transform: rotate(2.5deg) scale(1.1);
+    transform: rotate(2.5deg) scale(1.1);
+  }
+  100% {
+    -webkit-transform: rotate(0deg) scale(1.1) translate(1px, 1px);
+    -moz-transform: rotate(0deg) scale(1.1) translate(1px, 1px);
+    -o-transform: rotate(0deg) scale(1.1) translate(1px, 1px);
+    -ms-transform: rotate(0deg) scale(1.1) translate(1px, 1px);
+    transform: rotate(0deg) scale(1.1) translate(1px, 1px);
   }
 }
