@@ -24,12 +24,20 @@ interface ReleaseDateAttributes {
     label: string;
   }
 }
+
+interface LinkAttributes {
+  attributes: {
+    href: string;
+  }
+}
+
 export interface AlbumType {
   id: IdAttributes;
   'im:artist': ArtistAttributes;
   'im:image': ImageAttributes[];
   'im:name': NameAttributes;
   'im:releaseDate': ReleaseDateAttributes;
+  link: LinkAttributes;
 }
 
 export interface AlbumsListProps {

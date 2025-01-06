@@ -47,7 +47,7 @@ function App() {
   return (
     <div className="container">
       <Header />
-      { error && <p>{error}</p> }
+      { error && <p className="text-danger">{error}</p> }
       { loading && <Loading />}
       <div className="row">
       { !error && !loading && albums && <AlbumsList albums={albums} handleClick={handleOpenModal} />}

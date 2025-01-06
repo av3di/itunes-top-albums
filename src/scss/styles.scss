@@ -1,12 +1,15 @@
+$dark-gray: #454953;
+$salmon: #E7989A;
+$pale-orange: #FFCEB0;
+$almost-white: #FFF8F4;
+$primary: $salmon;
+
 @import "bootstrap/scss/bootstrap";
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
-$dark-gray: #454953;
-$salmon: #E7989A;
-$pale-orange: #FFCEB0;
-$almost-white: #FFF8F4;
+
 
 html, body {
   background-color: $dark-gray;
@@ -15,6 +18,13 @@ html, body {
 h1 {
   color: $salmon;
   font-weight: bold;
+}
+
+.btn-primary {
+  color: $almost-white;
+  &:hover {
+    color: $almost-white;
+  }
 }
 
 #loadingScreen {
