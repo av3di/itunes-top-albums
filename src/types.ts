@@ -19,17 +19,38 @@ interface NameAttributes {
   label: string;
 }
 
+interface ReleaseDateAttributes {
+  attributes: {
+    label: string;
+  }
+}
 export interface AlbumType {
   id: IdAttributes;
   'im:artist': ArtistAttributes;
   'im:image': ImageAttributes[];
   'im:name': NameAttributes;
+  'im:releaseDate': ReleaseDateAttributes;
 }
 
 export interface AlbumsListProps {
   albums: AlbumType[];
+  handleClick: (album: AlbumType) => void;
 }
 
 export interface AlbumImagesProps {
   images: ImageAttributes[];
 }
+
+export interface ModalProps {
+  show: boolean;
+  handleClose: () => void;
+  album: AlbumType | undefined;
+}
+ export interface ModalHeaderProps {
+  handleClose: () => void;
+  album: AlbumType;
+ }
+
+ export interface ModalBodyProps {
+  album: AlbumType;
+ }
