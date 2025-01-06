@@ -1,3 +1,14 @@
+# About this App
+
+An app that displays the top 100 albums from iTunes using React, Vite, Typescript, Bootstrap, and Scss. The user can also search the 100 albums by artist name or album title.
+It can be viewed here: [iTunes Top 100 Albums](http://ebonyuribe.com/projects/itunes-top-albums/index.html).
+
+ You can download it and run the following commands to view it locally: 
+ ```
+ npm install
+ npm run dev
+ ```
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
