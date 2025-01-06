@@ -3,8 +3,8 @@ import { AlbumType } from './types';
 import Header from './components/Header';
 import Loading from './components/Loading';
 import AlbumsList from './components/AlbumsList';
-import Modal from './components/Modal';
-import ModalBackdrop from './components/ModalBackdrop';
+import Modal from './components/Modal/Modal';
+import ModalBackdrop from './components/Modal/ModalBackdrop';
 
 function App() {
   const [error, setError] = useState<string | undefined>();

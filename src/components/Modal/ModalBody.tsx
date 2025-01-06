@@ -1,5 +1,5 @@
-import { ModalBodyProps } from "../types";
-import AlbumImage from "./AlbumImage";
+import { ModalBodyProps } from "../../types";
+import AlbumImage from "../AlbumImage";
 
 function ModalBody(props: ModalBodyProps) {
     return (

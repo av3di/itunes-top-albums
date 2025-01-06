@@ -1,6 +1,6 @@
-import { ModalProps } from "../types";
-import ModalBody from "./ModalBody";
+import { ModalProps } from "../../types";
 import ModalHeader from "./ModalHeader";
+import ModalBody from "./ModalBody";
 
 function Modal(props: ModalProps) {
     const modalStyle = props.show ? {display: "block"} : {display: "none"};

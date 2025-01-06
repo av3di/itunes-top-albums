@@ -1,4 +1,4 @@
-import { ModalHeaderProps } from "../types";
+import { ModalHeaderProps } from "../../types";
 
 function ModalHeader(props: ModalHeaderProps) {
     return (
