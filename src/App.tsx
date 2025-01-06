@@ -5,6 +5,7 @@ import Loading from './components/Loading';
 import AlbumsList from './components/AlbumsList';
 import Modal from './components/Modal/Modal';
 import ModalBackdrop from './components/Modal/ModalBackdrop';
+import SearchBar from './components/SearchBar/SearchBar';
 
 function App() {
   const [error, setError] = useState<string | undefined>();
@@ -49,6 +50,7 @@ function App() {
       <Header />
       { error && <p className="text-danger">{error}</p> }
       { loading && <Loading />}
+      { !error && !loading && albums && <SearchBar />}
       <div className="row">
       { !error && !loading && albums && <AlbumsList albums={albums} handleClick={handleOpenModal} />}
       </div>

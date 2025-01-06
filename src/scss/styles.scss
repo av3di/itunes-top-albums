@@ -20,6 +20,14 @@ h1 {
   font-weight: bold;
 }
 
+input {
+  width: 100%;
+  border-radius: 2px;
+  &:focus-visible {
+    outline: #E7989A solid 1px;
+  }
+}
+
 .btn-primary {
   color: $almost-white;
   &:hover {
