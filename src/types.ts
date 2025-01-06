@@ -62,3 +62,18 @@ export interface ModalProps {
  export interface ModalBodyProps {
   album: AlbumType;
  }
+
+ export interface SearchBarProps {
+  setQuery: (q: string) => void;
+  query: string;
+  handleSearch: () => void;
+ }
+
+ export interface SearchInputProps {
+  setQuery: (q: string) => void;
+  query: string;
+ }
+
+ export interface SearchButtonProps {
+  handleSearch: () => void;
+ }

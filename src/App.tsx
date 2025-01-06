@@ -13,6 +13,8 @@ function App() {
   const [loading, setLoading] = useState<boolean>(false);
   const [modalShow, setModalShow] = useState<boolean>(false);
   const [selectedAlbum, setSelectedAlbum] = useState<AlbumType | undefined>();
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [filteredAlbums, setFilteredAlbums] = useState<AlbumType[] | undefined>();
 
   useEffect(() => {
     const getAlbums = async () => {
@@ -25,8 +27,8 @@ function App() {
           throw new Error('Response not ok');
         }
         const data = await response.json();
-        console.log(data.feed.entry);
         setAlbums(data.feed.entry);
+        setFilteredAlbums(data.feed.entry);
       } catch(e) {
         setError('Sorry, there was an error getting the albums. Please try again later.');
         console.error(`Error with fetching data: ${e}`);
@@ -45,16 +47,31 @@ function App() {
     setModalShow(false);
   }
 
+  const handleSearch = () => {
+    if (searchQuery !== '' && albums) {
+      const q = searchQuery.toLowerCase();
+      setFilteredAlbums(albums.filter((album) => {
+        return album['im:artist'].label.toLowerCase().includes(q) || album['im:name'].label.toLowerCase().includes(q)
+      }));
+    } else {
+      setFilteredAlbums(albums);
+    }
+  }
+
   return (
     <div className="container">
       <Header />
-      { error && <p className="text-danger">{error}</p> }
+      { error && <p className="text-danger">{ error }</p> }
       { loading && <Loading />}
-      { !error && !loading && albums && <SearchBar />}
+      { !error && !loading && filteredAlbums && 
+        <SearchBar setQuery={ setSearchQuery } query={ searchQuery } handleSearch={ handleSearch } />
+      }
       <div className="row">
-      { !error && !loading && albums && <AlbumsList albums={albums} handleClick={handleOpenModal} />}
+        { !error && !loading && filteredAlbums &&
+          <AlbumsList albums={ filteredAlbums } handleClick={ handleOpenModal } />
+        }
       </div>
-      <Modal show={modalShow} handleClose={handleCloseModal} album={ selectedAlbum }/>
+      <Modal show={ modalShow } handleClose={ handleCloseModal } album={ selectedAlbum } />
       { modalShow && <ModalBackdrop /> }
     </div>
   )
